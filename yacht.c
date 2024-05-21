@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#ifdef _WIN32 // Å©·Î½ºÇÃ·§Æû Áö¿ø
+#ifdef _WIN32 // í¬ë¡œìŠ¤í”Œë«í¼ ì§€ì›
 #include <windows.h> 
 #include <conio.h>
 void clearScreen() {
@@ -109,7 +109,7 @@ int dice(int max) {
 }
 void clearBuffer() {
 	int ch;
-	while ((ch = getchar()) != '\n' && ch != EOF); // ÀÔ·Â ¹öÆÛ ºñ¿ì±â
+	while ((ch = getchar()) != '\n' && ch != EOF); // ì…ë ¥ ë²„í¼ ë¹„ìš°ê¸°
 }
 int findIndex(int test, int* arr) {
 	int length = 5;
@@ -188,7 +188,7 @@ int main() {
 	scanf("%d", &part);
 	player * arr = (player*)malloc(part * sizeof(player));
 	if (arr == NULL) {
-		printf("¸Ş¸ğ¸® ÇÒ´ç ½ÇÆĞ\n");
+		printf("ë©”ëª¨ë¦¬ í• ë‹¹ ì‹¤íŒ¨\n");
 		return 0;
 	}
 	for (int i = 0; i < part; i++) {
@@ -221,7 +221,7 @@ int main() {
 			int scoreTemp[13] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 			for (int i = 0; i < 5; i++) {
 				delay(1000);
-				*(diceFive + i) = i + 1;// dice(diceMAx);
+				*(diceFive + i) = dice(diceMAx);
 				printf("%d  ", *(diceFive + i));
 			}
 			printf("\nYou can choose that... : \nCount of %d case(s)", diceCheck(diceFive, (arr + tt)->listArr, scoreTemp));
