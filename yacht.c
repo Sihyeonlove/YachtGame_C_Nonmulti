@@ -232,7 +232,7 @@ int main() {
 				//printf("%d : list : %d, scoreTemp : %d, ");
 			}
 			for (int i = 0; i < 13; i++) {
-				if (scoreTemp[i] || i <= 5) {
+				if ((scoreTemp[i] || i <= 5) && ((arr + tt)->listArr[i])) {
 					cc++;
 					printf("%d : %s (Expect score : %d)\n", cc, list[i], scoreTemp[i]);
 					choice[cc] = i;
