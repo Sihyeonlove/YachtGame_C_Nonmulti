@@ -43,7 +43,7 @@ void delay(int milliseconds) {
 typedef struct player {
 	int score;
 	char name[100];
-	int listArr[13] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+	int listArr[13];// = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 } player;
 char getch_s() {
 	char buf = 0;
@@ -196,6 +196,7 @@ int main() {
 		printf("Hi, %dp.What is your name ? : ", i + 1);
 		scanf("%s", (arr + i)->name);
 		printf("Hello, %s.Welcome ! \n", (arr + i)->name);
+		(arr + i)->listArr = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 	}
 
 	delay(1000);
