@@ -196,7 +196,9 @@ int main() {
 		printf("Hi, %dp.What is your name ? : ", i + 1);
 		scanf("%s", (arr + i)->name);
 		printf("Hello, %s.Welcome ! \n", (arr + i)->name);
-		(arr + i)->listArr = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		for (int j = 0; j < 13; j++) {
+			arr[i].listArr[j] = 1;
+		}
 	}
 
 	delay(1000);
