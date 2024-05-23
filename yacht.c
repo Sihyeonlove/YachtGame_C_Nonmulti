@@ -243,13 +243,16 @@ int main() {
 			}
 			cc++;
 			printf("%d : Give up (Expect score : 0)\nWhat is your choice ? ", cc);
-			char cho;
-			scanf("%c", &cho);
+			int cho;
+			scanf("%d", &cho);
+			if (cho > cc) {
+				cho = cc;
+			}
 			
 			if (parseInt(cho) != cc) {
-				arr[tt].listArr[choice[parseInt(cho)]] = 0;
-				arr[tt].score += scoreTemp[choice[parseInt(cho)]];
-				printf("\n%d points get ! (now %dp)", scoreTemp[choice[parseInt(cho)]], (arr + tt)->score);
+				arr[tt].listArr[choice[cho]] = 0;
+				arr[tt].score += scoreTemp[choice[cho]];
+				printf("\n%d points get ! (now %dp)", scoreTemp[choice[cho]], (arr + tt)->score);
 			}
 			else {
 				printf("You gave up to get point...");
